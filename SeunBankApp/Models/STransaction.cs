@@ -6,12 +6,22 @@ using System.Threading.Tasks;
 
 namespace SeunBankApp
 {
-    internal class SpiritTransaction
+    public class STransaction
     {
-        public string TransactionID { get; set; }
-        public string TransactionType { get; set; }
-        public DateTime TransactionDate { get; set; }
-        public double TransactionAmount { get; set; }
+        public string TransactionID { get; }
+        public string TransactionType 
+        {
+            get 
+            {
+                if (TransactionAmount < 0) return "Debit";
+                return "Credit";
+            } 
+        }
+        public string TransactionDate
+        {
+            get { return DateTime.Now.ToString(); }    
+        }
+        public decimal TransactionAmount { get; set; }
         public string TransactionDescription { get; set; }
     }
 }
