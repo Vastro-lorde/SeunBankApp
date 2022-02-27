@@ -17,10 +17,7 @@ namespace SeunBankApp
                 return "Credit";
             } 
         }
-        public string TransactionDate
-        {
-            get { return DateTime.Now.ToString(); }    
-        }
+        public string TransactionDate { get; set; }
         public decimal TransactionAmount { get; set; }
         public string TransactionDescription { get; set; }
     }

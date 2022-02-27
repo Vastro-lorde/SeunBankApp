@@ -12,7 +12,11 @@ namespace SeunBankApp
         public bool VerifyPassword( string password, SBankAccount account)
         {
             return BC.Verify(password, account.Password);
+        }
 
+        public bool VerifyEmail( string email)
+        {
+            return true;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace SeunBankApp
 {
     public class Controllers
     {
-        public SBankAccount CreateAccount(string accountName, string password, string email)
+        public SBankAccount CreateAccount(string accountName, string password, string email, string accountType )
         {
             SBankAccount account = new SBankAccount();
             account.AccountName = accountName;
@@ -39,6 +39,15 @@ namespace SeunBankApp
                 }
             });
             return result;
+        }
+        public STransaction NewTransaction(decimal amount, string description)
+        {
+            STransaction transaction = new STransaction();
+            transaction.TransactionAmount = amount;
+            transaction.TransactionDescription = description;
+            transaction.TransactionDate = DateTime.Now.ToString();
+
+            return transaction;
         }
     }
 }
