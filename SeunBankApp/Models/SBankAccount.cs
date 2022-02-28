@@ -9,7 +9,7 @@ namespace SeunBankApp
         public string AccountName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string AccountType { get; }
+        public string AccountType { get; set; }
         public string AccountNumber;
         public decimal AccountBalance {
             get
