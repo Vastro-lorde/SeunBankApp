@@ -8,9 +8,13 @@ namespace BankAppUI
 {
     public class Inputs
     {
-        public void WelcomePage()
+        public static void Instruction(string instruct)
         {
-
+            Console.WriteLine(instruct);
+        }
+        public string Collect(string data)
+        {
+            return data;
         }
     }
 }

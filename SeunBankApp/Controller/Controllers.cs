@@ -21,6 +21,19 @@ namespace SeunBankApp
             return account;
         }
 
+        public List<SBankAccount> LoginAccount(string email, string password)
+        {
+            List<SBankAccount> sBankAccounts = new List<SBankAccount>();
+            SAccounts.ListOfBankAccounts.ForEach(account =>
+            {
+                if (account.Email == email && Validations.VerifyPassword(password, account))
+                {
+                    sBankAccounts.Add(account);
+                }
+            });
+                return sBankAccounts;
+        }
+
         public string CreateAccountNumber()
         {
             Random rnd = new Random();
@@ -47,7 +60,6 @@ namespace SeunBankApp
             transaction.TransactionAmount = amount;
             transaction.TransactionDescription = description;
             transaction.TransactionDate = DateTime.Now.ToString();
-
 
             return transaction;
         }

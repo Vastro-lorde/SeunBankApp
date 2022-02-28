@@ -10,7 +10,7 @@ namespace SeunBankApp
 {
     public class Validations
     {
-        public bool VerifyPassword( string password, SBankAccount account)
+        public static bool VerifyPassword( string password, SBankAccount account)
         {
             if (account == null || password == null) return false;
             return BC.Verify(password, account.Password);
@@ -25,6 +25,20 @@ namespace SeunBankApp
             if (emailFormat.IsMatch(email)) return true;
 
             return false;
+        }
+
+        public static bool VerifyAmountInputType(string amount)
+        {
+            bool success = decimal.TryParse(amount, out _);
+            if (success)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }
