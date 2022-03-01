@@ -1,7 +1,8 @@
 ﻿using System;
+using SeunBankApp;
 
 
-namespace SeunBankApp
+namespace BankAppUI
 {
     internal class Program
     {

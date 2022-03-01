@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SeunBankApp;
+using SeunBankAppCore;
 
-namespace BankAppUI
+namespace BankAppUI1
 {
     public class Home
     {

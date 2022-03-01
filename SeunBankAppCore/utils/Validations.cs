@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using BC = BCrypt.Net.BCrypt;
 
-namespace SeunBankApp
+namespace SeunBankAppCore
 {
     public static class Validations
     {
