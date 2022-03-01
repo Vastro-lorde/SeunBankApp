@@ -18,11 +18,18 @@ namespace BankAppUI1
             Inputs.Instruction("1. Signup.");
             Inputs.Instruction("2. Login.");
         }
-        public static void AccountDetailsTable()
+        public static void AccountDetailsTable(SBankAccount account)
         {
             PrintTable.PrintLine();
             PrintTable.PrintRow("FULLNAME","ACCOUNT NUMBER","ACCOUNT TYPE","ACCOUNT BALANCE");
             PrintTable.PrintLine();
+            SAccounts.ListOfBankAccounts.ForEach(bankAccount =>
+            {
+                if (account.Email == bankAccount.Email && Validations.VerifyPassword(bankAccount.Password, account))
+                {
+                    PrintTable.PrintRow(bankAccount.AccountName, bankAccount.AccountNumber, bankAccount.AccountType, bankAccount.AccountBalance.ToString());
+                }
+            });
             PrintTable.PrintLine();
         }
 
@@ -34,6 +41,38 @@ namespace BankAppUI1
             PrintTable.PrintLine();
         }
 
+        public static bool AccountActions(SBankAccount account)
+        {
+            bool running = true;
+            while (running)
+            {
+                Inputs.Instruction("Choose Your Next Action:\n" +
+                        "1. Open Another account. \n" +
+                        "2. Withdraw. \n" +
+                        "3. Deposit. \n" +
+                        "4. Transfer. \n" +
+                        "Return to the main menu by making any other input.");
+                string action = Inputs.Collect("choice");
+                if (action == "1")
+                {
+                    continue;
+                }
+                if (action == "2")
+                {
+
+                }
+                if (action == "3")
+                {
+
+                }
+                if (action == "4")
+                {
+
+                }
+                continue;
+            }
+            return running; 
+        }
        
 
     }

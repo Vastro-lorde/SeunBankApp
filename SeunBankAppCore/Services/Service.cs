@@ -7,9 +7,9 @@ using BC = BCrypt.Net.BCrypt;
 
 namespace SeunBankAppCore
 {
-    public class Service
+    public static class Service
     {
-        public SBankAccount CreateAccount(string accountName, string password, string email, string accountType )
+        public static SBankAccount CreateAccount(string accountName, string password, string email, string accountType )
         {
             SBankAccount account = new SBankAccount();
             account.AccountName = accountName;
@@ -21,7 +21,7 @@ namespace SeunBankAppCore
             return account;
         }
 
-        public List<SBankAccount> LoginAccount(string email, string password)
+        public static List<SBankAccount> LoginAccount(string email, string password)
         {
             List<SBankAccount> sBankAccounts = new List<SBankAccount>();
             SAccounts.ListOfBankAccounts.ForEach(account =>
@@ -34,14 +34,14 @@ namespace SeunBankAppCore
                 return sBankAccounts;
         }
 
-        public string CreateAccountNumber()
+        public static string CreateAccountNumber()
         {
             Random rnd = new Random();
-            int number = rnd.Next(1334567812, 199999999);
+            int number = rnd.Next(1334567812, 1999999999);
             return number.ToString();
         }
 
-        public bool DeleteAccount(SBankAccount account2Del)
+        public static bool DeleteAccount(SBankAccount account2Del)
         {
             bool result = false;
             SAccounts.ListOfBankAccounts.ForEach(account =>
@@ -54,7 +54,7 @@ namespace SeunBankAppCore
             });
             return result;
         }
-        public STransaction NewTransaction(decimal amount, string description)
+        public static STransaction NewTransaction(decimal amount, string description, SBankAccount account)
         {
             STransaction transaction = new STransaction();
             transaction.TransactionAmount = amount;
