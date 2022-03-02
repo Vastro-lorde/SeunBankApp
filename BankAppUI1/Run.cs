@@ -24,6 +24,7 @@ namespace BankAppUI1
                         "2. Current. ");
                     string accountType = 
                         Inputs.Collect("accountType") == "1" ? "Savings": "Current";
+                    Inputs.Instruction(accountType + " Selected");
                     Inputs.Instruction("Please input your Email");
                     string email = Inputs.CollectEmail("email");
                     Inputs.Instruction("Please input your Password");
