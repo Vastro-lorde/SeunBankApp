@@ -75,15 +75,7 @@ namespace SeunBankAppCore
 
         public static void Withdraw(SBankAccount account)
         {
-            Inputs.Instruction("Choose means of Withdrawer: \n" +
-                                "1. ATM terminal. \n" +
-                                "2. POS Agent. \n" +
-                                "3. Bank.");
-            string transactionDescription =
-                Inputs.Collect("Description") == "1" ? "ATM terminal" :
-                Inputs.Collect("Description") == "2" ? "POS Agent" :
-                Inputs.Collect("Description") == "3" ? "Bank" :
-                "Bank";
+            string transactionDescription = "Withdrawal of funds";
             Inputs.Instruction("Input Amount to be Withdrawn");
             decimal amount = Inputs.CollectAmount("amount");
             string result = Service.NewTransaction(-amount, transactionDescription, account) ? "Successful" : "Withdrawal Failed";
@@ -92,15 +84,7 @@ namespace SeunBankAppCore
 
         public static void Deposit(SBankAccount account)
         {
-            Inputs.Instruction("Choose means of Deposition: \n" +
-                                "1. ATM terminal. \n" +
-                                "2. POS Agent. \n" +
-                                "3. Bank.");
-            string transactionDescription =
-                Inputs.Collect("Description") == "1" ? "ATM terminal" :
-                Inputs.Collect("Description") == "2" ? "POS Agent" :
-                Inputs.Collect("Description") == "3" ? "Bank" :
-                "Bank";
+            string transactionDescription = "Deposit of funds";
             Inputs.Instruction("Input Amount to be Deposited");
             decimal amount = Inputs.CollectAmount("amount");
             string result = Service.NewTransaction(amount, transactionDescription, account) ? "Successful" : "Withdrawal Failed";
@@ -109,15 +93,7 @@ namespace SeunBankAppCore
 
         public static void TransferFund(SBankAccount account)
         {
-            Inputs.Instruction("Choose means of Transfer: \n" +
-                                "1. ATM terminal. \n" +
-                                "2. POS Agent. \n" +
-                                "3. Bank.");
-            string transactionDescription =
-                Inputs.Collect("Description") == "1" ? "ATM terminal" :
-                Inputs.Collect("Description") == "2" ? "POS Agent" :
-                Inputs.Collect("Description") == "3" ? "Bank" :
-                "Bank";
+            string transactionDescription = "Transfer of funds";
             Inputs.Instruction("Input Amount to be Transfered");
             decimal amount = Inputs.CollectAmount("amount");
             Inputs.Instruction("Input account number to send funds");

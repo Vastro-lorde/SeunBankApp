@@ -38,11 +38,14 @@ namespace BankAppUI1
                     while (running)
                     {
                         Inputs.Instruction("Choose Your Next Action:\n" +
-                                "1. Open Another account. \n" +
+                                "1. Open Another account / Logout. \n" +
                                 "2. Withdraw. \n" +
                                 "3. Deposit. \n" +
                                 "4. Transfer. \n" +
-                                "5. Return to the main menu by making any other input.");
+                                "5. Check Account Balance. \n" +
+                                "6. Account Details. \n" +
+                                "7. Account Statment." +
+                                "8. Exit");
                         string action = Inputs.Collect("choice");
                         if (action == "1")
                         {
@@ -51,24 +54,30 @@ namespace BankAppUI1
                         if (action == "2")
                         {
                             Inputs.Withdraw(account);
-                            Home.AccountDetailsTable(account);
-                            Home.TransactionsTable(account);
                         }
                         if (action == "3")
                         {
-                            Inputs.Deposit(account); 
-                            Home.AccountDetailsTable(account);
-                            Home.TransactionsTable(account);
+                            Inputs.Deposit(account);
                         }
                         if (action == "4")
                         {
                             Inputs.TransferFund(account);
+                        }
+                        if (action == "5")
+                        {
+                            Inputs.Instruction(account.AccountBalance.ToString());
+                        }
+                        if (action == "6")
+                        {
                             Home.AccountDetailsTable(account);
+                        }
+                        if (action == "7")
+                        {
                             Home.TransactionsTable(account);
                         }
-                        if (action =="5")
+                        if (action == "8")
                         {
-                            running = false;
+                            run = false;
                         }
                         Bank();
                     }
@@ -98,11 +107,14 @@ namespace BankAppUI1
                     while (running)
                     {
                         Inputs.Instruction("Choose Your Next Action:\n" +
-                                "1. Open Another account. \n" +
+                                "1. Open Another account / Logout. \n" +
                                 "2. Withdraw. \n" +
                                 "3. Deposit. \n" +
                                 "4. Transfer. \n" +
-                                "5. Return to the main menu by making any other input.");
+                                "5. Check Account Balance. \n" +
+                                "6. Account Details. \n" +
+                                "7. Account Statment." +
+                                "8. Exit");
                         string action = Inputs.Collect("choice");
                         if (action == "1")
                         {
@@ -111,26 +123,32 @@ namespace BankAppUI1
                         if (action == "2")
                         {
                             Inputs.Withdraw(account);
-                            Home.AccountDetailsTable(account);
-                            Home.TransactionsTable(account);
                         }
                         if (action == "3")
                         {
                             Inputs.Deposit(account);
-                            Home.AccountDetailsTable(account);
-                            Home.TransactionsTable(account);
                         }
                         if (action == "4")
                         {
                             Inputs.TransferFund(account);
-                            Home.AccountDetailsTable(account);
-                            Home.TransactionsTable(account);
                         }
                         if (action == "5")
                         {
-                            running = false;
+                            Inputs.Instruction(account.AccountBalance.ToString());
                         }
-                        running = false;
+                        if (action == "6")
+                        {
+                            Home.AccountDetailsTable(account);
+                        }
+                        if (action == "7")
+                        {
+                            Home.TransactionsTable(account);
+                        }
+                        if (action == "8")
+                        {
+                            run = false;
+                        }
+                        Bank();
                     }
                     running = false;
                 }
