@@ -40,39 +40,6 @@ namespace BankAppUI1
             PrintTable.PrintLine();
             PrintTable.PrintLine();
         }
-
-        public static bool AccountActions(SBankAccount account)
-        {
-            bool running = true;
-            while (running)
-            {
-                Inputs.Instruction("Choose Your Next Action:\n" +
-                        "1. Open Another account. \n" +
-                        "2. Withdraw. \n" +
-                        "3. Deposit. \n" +
-                        "4. Transfer. \n" +
-                        "Return to the main menu by making any other input.");
-                string action = Inputs.Collect("choice");
-                if (action == "1")
-                {
-                    continue;
-                }
-                if (action == "2")
-                {
-
-                }
-                if (action == "3")
-                {
-
-                }
-                if (action == "4")
-                {
-
-                }
-                continue;
-            }
-            return running; 
-        }
        
 
     }

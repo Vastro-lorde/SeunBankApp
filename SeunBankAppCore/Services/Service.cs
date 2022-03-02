@@ -54,14 +54,32 @@ namespace SeunBankAppCore
             });
             return result;
         }
-        public static STransaction NewTransaction(decimal amount, string description, SBankAccount account)
+
+        public static SBankAccount GetAccount(string accountNumber)
         {
+            SBankAccount result = null;   
+            SAccounts.ListOfBankAccounts.ForEach(account =>
+            {
+                if (account.AccountNumber == accountNumber)
+                {
+                    result = account;
+                }
+            });
+            return result;
+        }
+        public static bool NewTransaction(decimal amount, string description, SBankAccount account)
+        {
+            if (account.AccountBalance <= 1000 && account.AccountType == "Saving" && amount < 0) return false;
+            
+            if (account.AccountBalance == 0 && amount < 0) return false;
+
             STransaction transaction = new STransaction();
             transaction.TransactionAmount = amount;
             transaction.TransactionDescription = description;
             transaction.TransactionDate = DateTime.Now.ToString();
 
-            return transaction;
+            account.ListOfTransactions.Add(transaction);
+            return true;
         }
     }
 }

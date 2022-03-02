@@ -8,7 +8,6 @@ namespace SeunBankAppCore
 {
     public class STransaction
     {
-        public string TransactionID { get; }
         public string TransactionType 
         {
             get 
