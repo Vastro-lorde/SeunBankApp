@@ -17,6 +17,7 @@ namespace BankAppUI1
             Inputs.Instruction("Please Sign-up or Login by selecting 1 or 2:");
             Inputs.Instruction("1. Signup.");
             Inputs.Instruction("2. Login.");
+            Inputs.Instruction("3. Exit.");
         }
         public static void AccountDetailsTable(SBankAccount account)
         {
@@ -25,7 +26,7 @@ namespace BankAppUI1
             PrintTable.PrintLine();
             SAccounts.ListOfBankAccounts.ForEach(bankAccount =>
             {
-                if (account.Email == bankAccount.Email && Validations.VerifyPassword(bankAccount.Password, account))
+                if (account.Email == bankAccount.Email && Validations.EqualPassword(bankAccount.Password, account))
                 {
                     PrintTable.PrintRow(bankAccount.AccountName, bankAccount.AccountNumber, bankAccount.AccountType, bankAccount.AccountBalance.ToString());
                 }
@@ -33,11 +34,15 @@ namespace BankAppUI1
             PrintTable.PrintLine();
         }
 
-        public static void TransactionsTable()
+        public static void TransactionsTable(SBankAccount account)
         {
             PrintTable.PrintLine();
             PrintTable.PrintRow("DATE", "DESCRIPTION", "AMOUNT", "ACCOUNT BALANCE");
             PrintTable.PrintLine();
+            account.ListOfTransactions.ForEach(transaction =>
+            {
+                PrintTable.PrintRow(transaction.TransactionDate,transaction.TransactionDescription,transaction.TransactionAmount.ToString() +" "+ transaction.TransactionType,account.AccountBalance.ToString());
+            });
             PrintTable.PrintLine();
         }
        

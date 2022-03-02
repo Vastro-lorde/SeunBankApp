@@ -18,9 +18,10 @@ namespace BankAppUI1
                 string choice = Inputs.Collect("choice");
                 if (choice == "1")
                 {
+                    /* SIGNUP section */
                     Inputs.Instruction("Choose Account type:\n" +
                         "1. Savings. \n" +
-                        "2. Current.");
+                        "2. Current. ");
                     string accountType = 
                         Inputs.Collect("accountType") == "1" ? "Savings": "Current";
                     Inputs.Instruction("Please input your Email");
@@ -41,7 +42,7 @@ namespace BankAppUI1
                                 "2. Withdraw. \n" +
                                 "3. Deposit. \n" +
                                 "4. Transfer. \n" +
-                                "Return to the main menu by making any other input.");
+                                "5. Return to the main menu by making any other input.");
                         string action = Inputs.Collect("choice");
                         if (action == "1")
                         {
@@ -51,16 +52,23 @@ namespace BankAppUI1
                         {
                             Inputs.Withdraw(account);
                             Home.AccountDetailsTable(account);
+                            Home.TransactionsTable(account);
                         }
                         if (action == "3")
                         {
                             Inputs.Deposit(account); 
                             Home.AccountDetailsTable(account);
+                            Home.TransactionsTable(account);
                         }
                         if (action == "4")
                         {
                             Inputs.TransferFund(account);
                             Home.AccountDetailsTable(account);
+                            Home.TransactionsTable(account);
+                        }
+                        if (action =="5")
+                        {
+                            running = false;
                         }
                         Bank();
                     }
@@ -68,6 +76,7 @@ namespace BankAppUI1
                 }
                 if (choice == "2")
                 {
+                    /* LOGIN section */
                     Inputs.Instruction("Please input your Email");
                     string email = Inputs.CollectEmail("email");
                     Inputs.Instruction("Please input your Password");
@@ -93,35 +102,50 @@ namespace BankAppUI1
                                 "2. Withdraw. \n" +
                                 "3. Deposit. \n" +
                                 "4. Transfer. \n" +
-                                "Return to the main menu by making any other input.");
+                                "5. Return to the main menu by making any other input.");
                         string action = Inputs.Collect("choice");
                         if (action == "1")
                         {
-                            continue;
+                            Bank();
                         }
                         if (action == "2")
                         {
                             Inputs.Withdraw(account);
                             Home.AccountDetailsTable(account);
+                            Home.TransactionsTable(account);
                         }
                         if (action == "3")
                         {
                             Inputs.Deposit(account);
                             Home.AccountDetailsTable(account);
+                            Home.TransactionsTable(account);
                         }
                         if (action == "4")
                         {
                             Inputs.TransferFund(account);
                             Home.AccountDetailsTable(account);
+                            Home.TransactionsTable(account);
                         }
-                        continue;
+                        if (action == "5")
+                        {
+                            running = false;
+                        }
+                        running = false;
                     }
                     running = false;
                 }
-                continue;
+                if (choice == "3")
+                {
+                    run = false;
+                }
+                else
+                {
+                    Inputs.Clean();
+                    Inputs.Instruction("Only Inputs of 1, 2 or 3 is accepted");
+                    Bank();
+                }
             }
             
-            Home.TransactionsTable();
         }
     }
 }
