@@ -21,7 +21,7 @@ namespace SeunBankAppCore
         public static bool VerifyPassword( string password, SBankAccount account)
         {
             if (account == null || password == null) return false;
-            return BC.Equals(password, account.Password);
+            return BC.Verify(password, account.Password);
         }
 
         public static bool VerifyEmail( string email )

@@ -84,7 +84,7 @@ namespace SeunBankAppCore
                 Inputs.Collect("Description") == "2" ? "POS Agent" :
                 Inputs.Collect("Description") == "3" ? "Bank" :
                 "Bank";
-            Inputs.Instruction("Input Amount to be withdrawn");
+            Inputs.Instruction("Input Amount to be Withdrawn");
             decimal amount = Inputs.CollectAmount("amount");
             string result = Service.NewTransaction(-amount, transactionDescription, account) ? "Successful" : "Withdrawal Failed";
             Inputs.Instruction(result);
@@ -101,7 +101,7 @@ namespace SeunBankAppCore
                 Inputs.Collect("Description") == "2" ? "POS Agent" :
                 Inputs.Collect("Description") == "3" ? "Bank" :
                 "Bank";
-            Inputs.Instruction("Input Amount to be withdrawn");
+            Inputs.Instruction("Input Amount to be Deposited");
             decimal amount = Inputs.CollectAmount("amount");
             string result = Service.NewTransaction(amount, transactionDescription, account) ? "Successful" : "Withdrawal Failed";
             Inputs.Instruction(result);
@@ -118,7 +118,7 @@ namespace SeunBankAppCore
                 Inputs.Collect("Description") == "2" ? "POS Agent" :
                 Inputs.Collect("Description") == "3" ? "Bank" :
                 "Bank";
-            Inputs.Instruction("Input Amount to be Transfer");
+            Inputs.Instruction("Input Amount to be Transfered");
             decimal amount = Inputs.CollectAmount("amount");
             Inputs.Instruction("Input account number to send funds");
             string destinationAccoutNumber = Inputs.CollectText("destinationAccount");

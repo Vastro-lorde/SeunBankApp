@@ -45,21 +45,24 @@ namespace BankAppUI1
                         string action = Inputs.Collect("choice");
                         if (action == "1")
                         {
-                            continue;
+                            Bank();
                         }
                         if (action == "2")
                         {
                             Inputs.Withdraw(account);
+                            Home.AccountDetailsTable(account);
                         }
                         if (action == "3")
                         {
-                            Inputs.Deposit(account);
+                            Inputs.Deposit(account); 
+                            Home.AccountDetailsTable(account);
                         }
                         if (action == "4")
                         {
                             Inputs.TransferFund(account);
+                            Home.AccountDetailsTable(account);
                         }
-                        continue;
+                        Bank();
                     }
                      running = false;
                 }
@@ -99,14 +102,17 @@ namespace BankAppUI1
                         if (action == "2")
                         {
                             Inputs.Withdraw(account);
+                            Home.AccountDetailsTable(account);
                         }
                         if (action == "3")
                         {
                             Inputs.Deposit(account);
+                            Home.AccountDetailsTable(account);
                         }
                         if (action == "4")
                         {
                             Inputs.TransferFund(account);
+                            Home.AccountDetailsTable(account);
                         }
                         continue;
                     }
