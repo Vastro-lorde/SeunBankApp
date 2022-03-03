@@ -45,7 +45,7 @@ namespace BankAppUI1
                                 "4. Transfer. \n" +
                                 "5. Check Account Balance. \n" +
                                 "6. Account Details. \n" +
-                                "7. Account Statment." +
+                                "7. Account Statment.\n" +
                                 "8. Exit");
                         string action = Inputs.Collect("choice");
                         if (action == "1")
@@ -114,7 +114,7 @@ namespace BankAppUI1
                                 "4. Transfer. \n" +
                                 "5. Check Account Balance. \n" +
                                 "6. Account Details. \n" +
-                                "7. Account Statment." +
+                                "7. Account Statment. \n" +
                                 "8. Exit");
                         string action = Inputs.Collect("choice");
                         if (action == "1")
