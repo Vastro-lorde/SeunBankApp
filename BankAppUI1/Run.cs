@@ -30,9 +30,9 @@ namespace BankAppUI1
                     Inputs.Instruction("Please input your Password");
                     string password = Inputs.CollectPassword("password");
                     Inputs.Instruction("Please input your Fullname");
-                    string accountName = Inputs.CollectText("fullname");
+                    string accountName = Console.ReadLine();
                     var account = Service.CreateAccount(accountName, password, email, accountType);
-                    Inputs.Clean();
+                    Console.Clear();
                     Home.AccountDetailsTable(account);
 
                     bool running = true;
@@ -66,7 +66,7 @@ namespace BankAppUI1
                         }
                         if (action == "5")
                         {
-                            Inputs.Instruction(account.AccountBalance.ToString());
+                            Inputs.Instruction("Your account Balance is : " + account.AccountBalance.ToString());
                         }
                         if (action == "6")
                         {
@@ -159,7 +159,7 @@ namespace BankAppUI1
                 }
                 else
                 {
-                    Inputs.Clean();
+                    Console.Clear();
                     Inputs.Instruction("Only Inputs of 1, 2 or 3 is accepted");
                     Bank();
                 }

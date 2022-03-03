@@ -9,8 +9,6 @@ namespace SeunBankAppCore
     public class Inputs
     {
         public static void Instruction(string instruct) => Console.WriteLine(instruct);
-        public static string CollectText(string data) =>  Console.ReadLine();
-        public static void Clean() => Console.Clear();
         public static string Collect(string data)
         {
             var runing = true;
@@ -97,7 +95,7 @@ namespace SeunBankAppCore
             Inputs.Instruction("Input Amount to be Transfered");
             decimal amount = Inputs.CollectAmount("amount");
             Inputs.Instruction("Input account number to send funds");
-            string destinationAccoutNumber = Inputs.CollectText("destinationAccount");
+            string destinationAccoutNumber = Console.ReadLine();
 
             if (SAccounts.ListOfBankAccounts.Count < 0) Inputs.Instruction("Account doesn't exist");
 

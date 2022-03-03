@@ -11,7 +11,7 @@ namespace SeunBankAppCore
     {
         public static SBankAccount CreateAccount(string accountName, string password, string email, string accountType )
         {
-            SBankAccount account = new SBankAccount();
+            SBankAccount account = new();
             account.AccountName = accountName;
             account.Password = BC.HashPassword(password, BC.GenerateSalt(12));
             account.Email = email;
@@ -23,7 +23,7 @@ namespace SeunBankAppCore
 
         public static List<SBankAccount> LoginAccount(string email, string password)
         {
-            List<SBankAccount> sBankAccounts = new List<SBankAccount>();
+            List<SBankAccount> sBankAccounts = new();
             SAccounts.ListOfBankAccounts.ForEach(account =>
             {
                 if (account.Email == email && Validations.VerifyPassword(password, account))
@@ -36,7 +36,7 @@ namespace SeunBankAppCore
 
         public static string CreateAccountNumber()
         {
-            Random rnd = new Random();
+            Random rnd = new();
             int number = rnd.Next(1334567812, 1999999999);
             return number.ToString();
         }
@@ -73,7 +73,7 @@ namespace SeunBankAppCore
             
             if (account.AccountBalance == 0 && amount < 0) return false;
 
-            STransaction transaction = new STransaction();
+            STransaction transaction = new();
             transaction.TransactionAmount = amount;
             transaction.TransactionDescription = description;
             transaction.TransactionDate = DateTime.Now.ToString();
