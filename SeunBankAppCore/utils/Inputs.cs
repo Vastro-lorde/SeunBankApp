@@ -87,7 +87,7 @@ namespace SeunBankAppCore
             string transactionDescription = "Deposit of funds";
             Inputs.Instruction("Input Amount to be Deposited");
             decimal amount = Inputs.CollectAmount("amount");
-            string result = Service.NewTransaction(amount, transactionDescription, account) ? "Successful" : "Withdrawal Failed";
+            string result = Service.NewTransaction(amount, transactionDescription, account) ? "Successful" : "Deposition Failed";
             Inputs.Instruction(result);
         }
 
@@ -108,7 +108,7 @@ namespace SeunBankAppCore
             Inputs.Instruction(transfer);
 
             /* Creates the transaction record in account records */
-            string result = Service.NewTransaction(-amount, transactionDescription, account) ? $"Transfer of {amount} Successful to {destinationAccount.AccountNumber}" : "Withdrawal Failed";
+            string result = Service.NewTransaction(-amount, transactionDescription, account) ? $"Transfer of {amount} Successful to {destinationAccount.AccountNumber}" : "Transfer Failed";
             Inputs.Instruction(result);
         }
 
