@@ -135,7 +135,7 @@ namespace BankAppUI1
                         }
                         if (action == "5")
                         {
-                            Inputs.Instruction(account.AccountBalance.ToString());
+                            Inputs.Instruction("Your account Balance is : " + account.AccountBalance.ToString());
                         }
                         if (action == "6")
                         {
