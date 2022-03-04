@@ -15,8 +15,8 @@ namespace BankAppUI1
             while (run)
             {
                 Home.WelcomePage();
-                string choice = Inputs.Collect("choice");
-                if (choice == "1")
+                string choose = Inputs.Collect("choice");
+                if (choose == "1")
                 {
                     /* SIGNUP section */
                     Inputs.Instruction("Choose Account type:\n" +
@@ -50,23 +50,27 @@ namespace BankAppUI1
                         string action = Inputs.Collect("choice");
                         if (action == "1")
                         {
-                            Bank();
+                            break;
                         }
                         if (action == "2")
                         {
                             Inputs.Withdraw(account);
+                            
                         }
                         if (action == "3")
                         {
                             Inputs.Deposit(account);
+                            
                         }
                         if (action == "4")
                         {
                             Inputs.TransferFund(account);
+                            break ;
                         }
                         if (action == "5")
                         {
                             Inputs.Instruction("Your account Balance is : " + account.AccountBalance.ToString());
+                            break ;
                         }
                         if (action == "6")
                         {
@@ -80,11 +84,11 @@ namespace BankAppUI1
                         {
                             break;
                         }
-                        Bank();
+                       
                     }
                      run = false;
                 }
-                if (choice == "2")
+                if (choose == "2")
                 {
                     /* LOGIN section */
                     Inputs.Instruction("Please input your Email");
@@ -119,15 +123,17 @@ namespace BankAppUI1
                         string action = Inputs.Collect("choice");
                         if (action == "1")
                         {
-                            Bank();
+                            break;
                         }
                         if (action == "2")
                         {
                             Inputs.Withdraw(account);
+                            
                         }
                         if (action == "3")
                         {
                             Inputs.Deposit(account);
+                            
                         }
                         if (action == "4")
                         {
@@ -149,11 +155,11 @@ namespace BankAppUI1
                         {
                             break;
                         }
-                        Bank();
+                        
                     }
                     run = false;
                 }
-                if (choice == "3")
+                if (choose == "3")
                 {
                     run = false;
                 }
