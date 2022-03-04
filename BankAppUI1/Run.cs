@@ -78,11 +78,11 @@ namespace BankAppUI1
                         }
                         if (action == "8")
                         {
-                            run = false;
+                            break;
                         }
                         Bank();
                     }
-                     running = false;
+                     run = false;
                 }
                 if (choice == "2")
                 {
@@ -91,7 +91,7 @@ namespace BankAppUI1
                     string email = Inputs.CollectEmail("email");
                     Inputs.Instruction("Please input your Password");
                     string password = Inputs.CollectPassword("password");
-                    if (SAccounts.ListOfBankAccounts.Count < 0) Inputs.Instruction("Account doesn't exist");
+                    if (SAccounts.ListOfBankAccounts.Count == 0) Inputs.Instruction("Account doesn't exist"); Bank();
                     var accounts = Service.LoginAccount(email, password);
                     Inputs.Instruction("Choose account");
                     accounts.ForEach(account =>
@@ -147,11 +147,11 @@ namespace BankAppUI1
                         }
                         if (action == "8")
                         {
-                            run = false;
+                            break;
                         }
                         Bank();
                     }
-                    running = false;
+                    run = false;
                 }
                 if (choice == "3")
                 {
