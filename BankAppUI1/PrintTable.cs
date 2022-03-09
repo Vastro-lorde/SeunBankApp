@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BankAppUI
+namespace BankAppUI1
 {
     public class PrintTable
     {

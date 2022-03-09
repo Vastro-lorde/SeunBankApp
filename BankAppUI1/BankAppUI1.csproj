@@ -6,11 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\BankAppUI\BankAppUI.csproj" />
+    <ProjectReference Include="..\SeunBankAppCore\SeunBankAppCore.csproj" />
   </ItemGroup>
 
 </Project>

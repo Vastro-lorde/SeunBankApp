@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-namespace SeunBankApp
+namespace SeunBankAppCore
 {
     public class SBankAccount
     {
@@ -26,7 +26,7 @@ namespace SeunBankApp
         public List<STransaction> ListOfTransactions = new List<STransaction>();
         
     }
-    public class SAccounts
+    public static class SAccounts
     {
         public static List<SBankAccount> ListOfBankAccounts = new List<SBankAccount>();
     }

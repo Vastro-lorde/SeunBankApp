@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeunBankApp
+namespace SeunBankAppCore
 {
     public class STransaction
     {
-        public string TransactionID { get; }
         public string TransactionType 
         {
             get 

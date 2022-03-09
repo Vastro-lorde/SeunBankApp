@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeunBankApp", "SeunBankApp\SeunBankApp.csproj", "{DF15311C-156F-4B64-8903-D13AA2B2EF80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAppUI1", "BankAppUI1\BankAppUI1.csproj", "{6CD09B7F-AC9B-4B1C-AD81-676A86A56D0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAppUI", "BankAppUI\BankAppUI.csproj", "{75411E1B-C2BA-49CA-A2DD-E4E23E716896}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeunBankAppCore", "SeunBankAppCore\SeunBankAppCore.csproj", "{DD57F95B-1517-4BCF-B3CF-CF69072E2279}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DF15311C-156F-4B64-8903-D13AA2B2EF80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF15311C-156F-4B64-8903-D13AA2B2EF80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF15311C-156F-4B64-8903-D13AA2B2EF80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF15311C-156F-4B64-8903-D13AA2B2EF80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75411E1B-C2BA-49CA-A2DD-E4E23E716896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75411E1B-C2BA-49CA-A2DD-E4E23E716896}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75411E1B-C2BA-49CA-A2DD-E4E23E716896}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75411E1B-C2BA-49CA-A2DD-E4E23E716896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CD09B7F-AC9B-4B1C-AD81-676A86A56D0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CD09B7F-AC9B-4B1C-AD81-676A86A56D0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CD09B7F-AC9B-4B1C-AD81-676A86A56D0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CD09B7F-AC9B-4B1C-AD81-676A86A56D0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD57F95B-1517-4BCF-B3CF-CF69072E2279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD57F95B-1517-4BCF-B3CF-CF69072E2279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD57F95B-1517-4BCF-B3CF-CF69072E2279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD57F95B-1517-4BCF-B3CF-CF69072E2279}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
